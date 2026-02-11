@@ -13,6 +13,7 @@ const navLinks = [
   { label: "Compare", href: "#compare" },
   { label: "Where to Buy", href: "#where-to-buy" },
   { label: "Blog", href: "/blog", external: true },
+  { label: "Quiz", href: "/quiz", external: true },
 ];
 
 export default function Navbar() {

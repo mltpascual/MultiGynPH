@@ -7,6 +7,7 @@ import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyMultiGynSection from "@/components/WhyMultiGynSection";
 import BlogPreviewSection from "@/components/BlogPreviewSection";
+import NewsletterSection from "@/components/NewsletterSection";
 import WhereToBuySection from "@/components/WhereToBuySection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -25,6 +26,7 @@ export default function Home() {
         <WhyMultiGynSection />
         <TestimonialsSection />
         <BlogPreviewSection />
+        <NewsletterSection variant="full" />
         <WhereToBuySection />
         <FAQSection />
         <CTASection />

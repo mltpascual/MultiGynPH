@@ -101,6 +101,7 @@ export default function Footer() {
                 { label: "Compare Products", href: "#compare" },
                 { label: "Where to Buy", href: "#where-to-buy" },
                 { label: "Blog", href: "/blog" },
+                { label: "Product Quiz", href: "/quiz" },
                 { label: "FAQ", href: "#faq" },
                 { label: "Official Website", href: "https://multi-gyn.com" },
               ].map((item) => (

@@ -283,11 +283,14 @@ export default function ComparisonSection() {
             transition={{ duration: 0.5, delay: 0.5 }}
             className="mt-8 text-center"
           >
-            <p className="font-['Noto_Sans'] text-sm text-foreground/45 leading-relaxed">
+            <p className="font-['Noto_Sans'] text-sm text-foreground/45 leading-relaxed mb-4">
               All Multi-Gyn products contain the patented <strong className="text-violet-deep/70">2QR Complex</strong> and are free from hormones, preservatives, and fragrances.
               <br className="hidden sm:block" />
               Consult your healthcare provider for personalized recommendations.
             </p>
+            <Link href="/quiz" className="inline-flex items-center gap-2 px-5 py-2.5 bg-teal text-white font-['Figtree'] font-semibold text-sm rounded-full hover:bg-teal-dark transition-colors shadow-[0_2px_12px_rgba(42,191,191,0.25)]">
+              Not sure? Take our Product Quiz <ArrowRight size={14} />
+            </Link>
           </motion.div>
         </motion.div>
       </div>

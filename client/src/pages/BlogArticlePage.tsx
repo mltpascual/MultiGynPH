@@ -9,6 +9,7 @@ import { useEffect, useState } from "react";
 import { Link, useParams } from "wouter";
 import { ArrowLeft, Clock, Tag, ArrowRight, Share2, BookOpen } from "lucide-react";
 import Footer from "@/components/Footer";
+import NewsletterSection from "@/components/NewsletterSection";
 
 /* ─── ARTICLE DATA (same as BlogPage) ─── */
 const articles = [
@@ -374,6 +375,13 @@ export default function BlogArticlePage() {
               </div>
             </motion.aside>
           </div>
+        </div>
+      </section>
+
+      {/* ─── NEWSLETTER SIGNUP ─── */}
+      <section className="pb-4">
+        <div className="container max-w-4xl">
+          <NewsletterSection variant="compact" />
         </div>
       </section>
 
