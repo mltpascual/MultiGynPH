@@ -1,7 +1,7 @@
 /*
   DESIGN: Fluid Wellness — Soft Modernism
-  Products: Frosted glass product cards on lavender gradient background.
-  Each card features product image, name, description, and CTA.
+  Products: Frosted glass product cards with real product images.
+  Each card features product photo, name, description, and CTA.
 */
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
@@ -13,7 +13,7 @@ const products = [
     tagline: "Bacterial Vaginosis Treatment",
     description: "Treats and prevents bacterial vaginosis (BV) and its related symptoms like undesired discharge and odor. Provides direct relief using the unique 2QR Complex.",
     features: ["Treats BV symptoms", "Reduces odor & discharge", "Safe during pregnancy"],
-    image: "https://images.unsplash.com/photo-1556228578-0d85b1a4d571?w=400&h=500&fit=crop",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg",
     color: "from-violet-deep/5 to-lavender/20",
     accent: "#4A1A6B",
   },
@@ -22,7 +22,7 @@ const products = [
     tagline: "Daily Intimate Hygiene",
     description: "A mild, soap-free, and caring intimate hygiene wash. Extremely smooth, safe, and non-irritating even for the most sensitive tissues. Ideal for daily use.",
     features: ["Soap-free formula", "pH balanced", "Daily gentle care"],
-    image: "https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&h=500&fit=crop",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png",
     color: "from-teal/5 to-teal/15",
     accent: "#2ABFBF",
   },
@@ -31,7 +31,7 @@ const products = [
     tagline: "Vaginal Dryness Relief",
     description: "Treats and relieves vaginal dryness with a gentle, moisturizing gel formula. Provides long-lasting comfort and hydration for intimate wellness.",
     features: ["Relieves dryness", "Long-lasting moisture", "Gentle application"],
-    image: "https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=400&h=500&fit=crop",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg",
     color: "from-blush/20 to-lavender/15",
     accent: "#C4A7D7",
   },
@@ -40,7 +40,7 @@ const products = [
     tagline: "Vaginal Yeast Relief",
     description: "Direct relief of itch, irritation, and crumbly white discharge caused by vaginal yeast. Restores and maintains healthy vaginal flora naturally.",
     features: ["Relieves itch & irritation", "Restores flora", "Natural ingredients"],
-    image: "https://images.unsplash.com/photo-1598440947619-2c35fc9aa908?w=400&h=500&fit=crop",
+    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png",
     color: "from-violet-deep/5 to-teal/10",
     accent: "#4A1A6B",
   },
@@ -58,15 +58,15 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
       transition={{ duration: 0.6, delay: index * 0.15, ease: "easeOut" }}
       className="group relative"
     >
-      <div className={`relative bg-gradient-to-br ${product.color} backdrop-blur-sm rounded-3xl border border-white/60 p-6 md:p-8 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(74,26,107,0.12)] hover:translate-y-[-4px]`}>
-        {/* Product Icon/Visual */}
-        <div className="w-16 h-16 rounded-2xl mb-6 flex items-center justify-center" style={{ backgroundColor: `${product.accent}12` }}>
-          <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={product.accent} strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M8 2h8l4 10H4L8 2Z" />
-            <path d="M12 12v6" />
-            <path d="M8 22h8" />
-            <path d="M10 18h4" />
-          </svg>
+      <div className={`relative bg-gradient-to-br ${product.color} backdrop-blur-sm rounded-3xl border border-white/60 p-6 md:p-8 transition-all duration-500 hover:shadow-[0_8px_40px_rgba(74,26,107,0.12)] hover:translate-y-[-4px] h-full flex flex-col`}>
+        {/* Product Image */}
+        <div className="relative w-full h-44 mb-6 flex items-center justify-center overflow-hidden rounded-2xl bg-white/60">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="h-40 w-auto object-contain drop-shadow-md transition-transform duration-500 group-hover:scale-110"
+            loading="lazy"
+          />
         </div>
 
         {/* Content */}
@@ -76,7 +76,7 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
         <h3 className="font-['Figtree'] text-xl font-bold text-violet-deep mt-2 mb-3">
           {product.name}
         </h3>
-        <p className="font-['Noto_Sans'] text-sm text-foreground/70 leading-relaxed mb-5">
+        <p className="font-['Noto_Sans'] text-sm text-foreground/70 leading-relaxed mb-5 flex-grow">
           {product.description}
         </p>
 

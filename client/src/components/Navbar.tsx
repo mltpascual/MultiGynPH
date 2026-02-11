@@ -11,8 +11,8 @@ const navLinks = [
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
   { label: "Benefits", href: "#benefits" },
-  { label: "Why Multi-Gyn", href: "#why" },
-  { label: "Reviews", href: "#reviews" },
+  { label: "Where to Buy", href: "#where-to-buy" },
+  { label: "FAQ", href: "#faq" },
 ];
 
 export default function Navbar() {
@@ -69,7 +69,7 @@ export default function Navbar() {
 
         {/* CTA Button */}
         <a
-          href="#products"
+          href="#where-to-buy"
           className="hidden md:inline-flex items-center px-5 py-2.5 bg-violet-deep text-white text-sm font-[Figtree] font-semibold rounded-full hover:bg-violet-mid transition-colors duration-300 shadow-[0_4px_16px_rgba(74,26,107,0.25)] hover:shadow-[0_6px_24px_rgba(74,26,107,0.35)]"
         >
           Shop Now
@@ -107,7 +107,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#products"
+                href="#where-to-buy"
                 onClick={() => setMobileOpen(false)}
                 className="inline-flex items-center justify-center px-5 py-3 bg-violet-deep text-white text-sm font-[Figtree] font-semibold rounded-full mt-2"
               >

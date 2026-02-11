@@ -85,7 +85,8 @@ export default function Footer() {
               {[
                 { label: "About Multi-Gyn", href: "#about" },
                 { label: "How It Works", href: "#why" },
-                { label: "Reviews", href: "#reviews" },
+                { label: "Where to Buy", href: "#where-to-buy" },
+                { label: "FAQ", href: "#faq" },
                 { label: "Official Website", href: "https://multi-gyn.com" },
               ].map((item) => (
                 <li key={item.label}>
@@ -109,7 +110,9 @@ export default function Footer() {
               {[
                 { label: "Shopee Philippines", href: "https://shopee.ph/list/multi%20gyn" },
                 { label: "Lazada Philippines", href: "https://www.lazada.com.ph/catalog/?q=multi+gyn" },
-                { label: "Leading Pharmacies", href: "#products" },
+                { label: "Mercury Drug", href: "#where-to-buy" },
+                { label: "Watsons", href: "#where-to-buy" },
+                { label: "Rose Pharmacy", href: "#where-to-buy" },
               ].map((item) => (
                 <li key={item.label}>
                   <a
