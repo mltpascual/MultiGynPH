@@ -106,12 +106,15 @@ Each product page has a distinct accent color to aid visual differentiation whil
 | **Blog Card** | Generously rounded (`rounded-2xl`) | White | `border-lavender-light/50` | `shadow-[0_2px_16px_rgba(74,26,107,0.04)]` | Lift `-translate-y-1`, shadow intensifies |
 | **Testimonial Card** | Generously rounded (`rounded-2xl`) | White | `border-lavender-light/30` | `shadow-[0_4px_24px_rgba(74,26,107,0.06)]` | — |
 | **Featured Card** | Very rounded (`rounded-3xl`) | White | `border-lavender-light/50` | `shadow-[0_4px_24px_rgba(74,26,107,0.06)]` | Shadow intensifies |
+| **Quiz Option Card** | Rounded (`rounded-xl`) | White | `border-lavender-light/50` | `shadow-sm` | Border teal, lift `-translate-y-1` |
+| **Newsletter Card** | Very rounded (`rounded-3xl`) | Gradient `violet-deep → violet-mid` | None | `shadow-[0_8px_32px_rgba(74,26,107,0.2)]` | — |
 
 ### Icon Containers
 
 - **Small icon badge**: `w-10 h-10 rounded-xl bg-teal/10` with teal icon inside.
 - **Large icon badge**: `w-14 h-14 rounded-2xl bg-teal/10` with teal icon inside.
 - **Step number**: `w-10 h-10 rounded-full bg-teal text-white` with Figtree bold number.
+- **Quiz step indicator**: `w-8 h-8 rounded-full` — active: `bg-teal text-white`, completed: `bg-teal/20 text-teal`, upcoming: `bg-lavender-light/50 text-foreground/30`.
 
 ### Comparison Table
 
@@ -155,6 +158,8 @@ Each product page has a distinct accent color to aid visual differentiation whil
 - **Blog cards**: `grid sm:grid-cols-2 lg:grid-cols-3 gap-6`
 - **Article layout**: `grid lg:grid-cols-[1fr_320px] gap-12` (content + sidebar)
 - **About section**: Asymmetric `grid lg:grid-cols-2 gap-12` (image left, text right)
+- **Quiz layout**: Centered single-column `max-w-2xl mx-auto` with step indicator
+- **Newsletter**: Full-width gradient card with centered content `max-w-xl mx-auto`
 
 ### Wave Dividers
 
@@ -187,6 +192,7 @@ All section content uses `framer-motion` with `useInView` for entrance animation
 | **Cards in grid** | `opacity: 0→1, y: 25→0` | `0.5s` | Staggered: `0.08s × index` |
 | **Hero content** | `opacity: 0→1, y: 30→0` | `0.8s` | Sequential: title → description → CTA |
 | **Stats counters** | `opacity: 0→1, y: 20→0` | `0.5s` | Staggered: `0.1s × index` |
+| **Quiz transitions** | `opacity: 0→1, x: 50→0` | `0.4s` | Horizontal slide for step progression |
 
 ### Interaction Animations
 
@@ -199,13 +205,17 @@ All section content uses `framer-motion` with `useInView` for entrance animation
 | **Mobile menu** | Height expand with `AnimatePresence` | `0.3s ease-in-out` |
 | **Accordion** | Height expand/collapse | `0.3s` |
 | **Testimonial carousel** | Horizontal slide with `ease-in-out` | `0.5s` |
+| **Quiz option select** | Border color + scale pulse | `0.2s` |
+| **Quiz step transition** | `AnimatePresence` with directional slide | `0.4s` |
+| **Progress bar fill** | Width transition with spring easing | `0.6s` |
 
 ### Motion Principles
 
-- **Entrance**: Always from below (`y: 20–30`) with fade-in. Never from the sides.
+- **Entrance**: Always from below (`y: 20–30`) with fade-in. Never from the sides (exception: quiz step transitions use horizontal slide).
 - **Trigger**: `useInView` with `once: true` and `margin: "-80px"` to trigger slightly before element enters viewport.
 - **Easing**: Default ease or `ease-in-out`. No bouncy or elastic curves — the brand is medical/professional.
-- **Restraint**: Animations are subtle and purposeful. No gratuitous movement. Each animation should feel like the content is "settling into place."
+- **Duration**: Keep animations between `0.3s` and `0.8s`. Anything longer feels sluggish.
+- **Stagger**: Grid items stagger at `0.08s` intervals. Never exceed `0.15s` per item.
 
 ---
 
@@ -225,6 +235,7 @@ All section content uses `framer-motion` with `useInView` for entrance animation
 | **Product images** | Clean product photography on transparent/white background. `object-contain` to preserve proportions. |
 | **Blog images** | Lifestyle/editorial photography. `object-cover` with `rounded-2xl` corners. |
 | **About section** | Nature/wellness imagery. Paired with floating info badge overlay. |
+| **Product page heroes** | Each product has a unique AI-generated abstract background in its accent color family. |
 
 ### Text-on-Image Contrast Rules
 
@@ -253,6 +264,8 @@ Examples:
 - `WHY CHOOSE US` → "The Multi-Gyn Difference"
 - `FIND YOUR MATCH` → "Product Comparison"
 - `HEALTH HUB` → "Intimate Health Insights"
+- `STAY INFORMED` → "Join Our Wellness Community"
+- `PRODUCT FINDER` → "Find Your Perfect Match"
 
 ---
 
@@ -269,7 +282,8 @@ client/src/
 │   ├── LiquiGelPage.tsx      # Product detail page
 │   ├── FloraPlusPage.tsx     # Product detail page
 │   ├── BlogPage.tsx          # Blog listing page
-│   └── BlogArticlePage.tsx   # Individual article page
+│   ├── BlogArticlePage.tsx   # Individual article page
+│   └── QuizPage.tsx          # Product recommender quiz
 ├── components/
 │   ├── Navbar.tsx            # Sticky floating navbar
 │   ├── HeroSection.tsx       # Homepage hero
@@ -280,11 +294,25 @@ client/src/
 │   ├── WhyMultiGynSection.tsx# 3-step routine
 │   ├── TestimonialsSection.tsx# Testimonial carousel
 │   ├── BlogPreviewSection.tsx# Homepage blog preview
+│   ├── NewsletterSection.tsx # Newsletter signup form
 │   ├── WhereToBuySection.tsx # Pharmacy & online tabs
 │   ├── FAQSection.tsx        # Accordion FAQ
 │   ├── CTASection.tsx        # Bottom call-to-action
 │   └── Footer.tsx            # Site footer
 ```
+
+### Route Structure
+
+| Path | Page | Lazy Loaded |
+|------|------|-------------|
+| `/` | Home | No (critical path) |
+| `/products/actigel` | ActiGelPage | Yes |
+| `/products/femiwash` | FemiWashPage | Yes |
+| `/products/liquigel` | LiquiGelPage | Yes |
+| `/products/floraplus` | FloraPlusPage | Yes |
+| `/blog` | BlogPage | Yes |
+| `/blog/:slug` | BlogArticlePage | Yes |
+| `/quiz` | QuizPage | Yes |
 
 ### Design Comment Convention
 
@@ -304,11 +332,66 @@ This ensures any developer touching the file understands the design intent befor
 
 ---
 
-## 10. Accessibility Notes
+## 10. Interactive Features
+
+### Product Quiz
+
+The product recommender quiz guides users through 5 questions to suggest the best Multi-Gyn product:
+
+- **Layout**: Centered single-column with step progress indicator at the top
+- **Step indicator**: Numbered circles connected by lines — active (teal fill), completed (teal outline with check), upcoming (gray)
+- **Progress bar**: Thin horizontal bar below step indicator, fills proportionally with teal gradient
+- **Options**: Card-based selection (not radio buttons) — each option is a clickable card with hover lift
+- **Transitions**: Horizontal slide between questions using `AnimatePresence` with `mode="wait"`
+- **Result page**: Product recommendation card with match percentage, key benefits, and CTA to product page; secondary recommendation shown below
+
+### Newsletter Signup
+
+- **Homepage variant**: Full-width gradient card (`violet-deep → violet-mid`) with centered content, email input, and "Subscribe Now" button
+- **Blog article variant**: Compact card at the bottom of each article with the same gradient treatment
+- **Input styling**: White background, rounded-full, with teal submit button inline
+- **Success state**: Animated checkmark with "Thank you!" message replacing the form
+
+---
+
+## 11. Performance & Deployment
+
+### Code Splitting Strategy
+
+The application uses React.lazy() for route-based code splitting:
+
+| Chunk | Contents | Gzipped Size |
+|-------|----------|-------------|
+| **index** | Home page + shared components + framework | ~108 KB |
+| **vendor** | React, React DOM | ~4 KB |
+| **framer-motion** | Animation library | ~39 KB |
+| **ui** | Radix UI primitives | ~15 KB |
+| **Product pages** | Individual product detail pages | ~10 KB each |
+| **Blog pages** | Blog listing + article pages | ~7–10 KB each |
+| **QuizPage** | Product recommender quiz | ~5 KB |
+
+### Vercel Deployment
+
+The project is configured for Vercel with:
+
+- `vercel.json` — Build command (`pnpm run build:static`), output directory (`dist/public`), and SPA rewrites
+- `build:static` script — Frontend-only build (no server bundling)
+- SPA fallback — All routes rewrite to `/index.html` for client-side routing
+
+### Build Output
+
+- Static files output to `dist/public/`
+- CSS: ~24 KB gzipped (Tailwind with tree-shaking)
+- Total JS: ~210 KB gzipped (across all chunks, only loads what's needed per route)
+
+---
+
+## 12. Accessibility Notes
 
 - **Focus rings**: Visible focus indicators on all interactive elements via `outline-ring/50`.
 - **Color contrast**: All text meets WCAG AA contrast ratios against their backgrounds.
-- **Keyboard navigation**: All interactive elements are reachable via Tab key.
+- **Keyboard navigation**: All interactive elements are reachable via Tab key. Quiz options are keyboard-selectable.
 - **Aria labels**: Icon-only buttons include `aria-label` attributes.
 - **Reduced motion**: Consider adding `prefers-reduced-motion` media query for users who prefer less animation (not yet implemented).
 - **Semantic HTML**: Proper heading hierarchy (h1 → h2 → h3), landmark elements (`<header>`, `<main>`, `<footer>`, `<nav>`).
+- **Form accessibility**: Newsletter email input has associated label. Quiz options use semantic button elements.
