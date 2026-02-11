@@ -73,13 +73,21 @@ export default function Footer() {
                   Multi-Gyn ActiGel
                 </a>
               </li>
-              {["Multi-Gyn FemiWash", "Multi-Gyn LiquiGel", "Multi-Gyn FloraPlus"].map((item) => (
-                <li key={item}>
-                  <a href="/#products" className="font-['Noto_Sans'] text-sm text-white/45 hover:text-teal transition-colors duration-200">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              <li>
+                <a href="/products/femiwash" className="font-['Noto_Sans'] text-sm text-white/45 hover:text-teal transition-colors duration-200">
+                  Multi-Gyn FemiWash
+                </a>
+              </li>
+              <li>
+                <a href="/products/liquigel" className="font-['Noto_Sans'] text-sm text-white/45 hover:text-teal transition-colors duration-200">
+                  Multi-Gyn LiquiGel
+                </a>
+              </li>
+              <li>
+                <a href="/products/floraplus" className="font-['Noto_Sans'] text-sm text-white/45 hover:text-teal transition-colors duration-200">
+                  Multi-Gyn FloraPlus
+                </a>
+              </li>
             </ul>
           </div>
 

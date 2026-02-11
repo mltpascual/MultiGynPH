@@ -6,7 +6,9 @@ import ErrorBoundary from "./components/ErrorBoundary";
 import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import ActiGelPage from "./pages/ActiGelPage";
-import { useEffect } from "react";
+import FemiWashPage from "./pages/FemiWashPage";
+import LiquiGelPage from "./pages/LiquiGelPage";
+import FloraPlusPage from "./pages/FloraPlusPage";
 
 
 function Router() {
@@ -14,6 +16,9 @@ function Router() {
     <Switch>
       <Route path={"/"} component={Home} />
       <Route path={"/products/actigel"} component={ActiGelPage} />
+      <Route path={"/products/femiwash"} component={FemiWashPage} />
+      <Route path={"/products/liquigel"} component={LiquiGelPage} />
+      <Route path={"/products/floraplus"} component={FloraPlusPage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

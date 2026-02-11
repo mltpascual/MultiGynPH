@@ -28,8 +28,8 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png",
     color: "from-teal/5 to-teal/15",
     accent: "#2ABFBF",
-    href: "https://shopee.ph/list/multi%20gyn%20femiwash",
-    internal: false,
+    href: "/products/femiwash",
+    internal: true,
   },
   {
     name: "Multi-Gyn LiquiGel",
@@ -39,8 +39,8 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg",
     color: "from-blush/20 to-lavender/15",
     accent: "#C4A7D7",
-    href: "https://shopee.ph/list/multi%20gyn%20liquigel",
-    internal: false,
+    href: "/products/liquigel",
+    internal: true,
   },
   {
     name: "Multi-Gyn FloraPlus",
@@ -50,8 +50,8 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png",
     color: "from-violet-deep/5 to-teal/10",
     accent: "#4A1A6B",
-    href: "https://shopee.ph/list/multi%20gyn%20floraplus",
-    internal: false,
+    href: "/products/floraplus",
+    internal: true,
   },
 ];
 
