@@ -2,9 +2,11 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import AboutSection from "@/components/AboutSection";
 import ProductsSection from "@/components/ProductsSection";
+import ComparisonSection from "@/components/ComparisonSection";
 import BenefitsSection from "@/components/BenefitsSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import WhyMultiGynSection from "@/components/WhyMultiGynSection";
+import BlogPreviewSection from "@/components/BlogPreviewSection";
 import WhereToBuySection from "@/components/WhereToBuySection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
@@ -18,9 +20,11 @@ export default function Home() {
         <HeroSection />
         <AboutSection />
         <ProductsSection />
+        <ComparisonSection />
         <BenefitsSection />
         <WhyMultiGynSection />
         <TestimonialsSection />
+        <BlogPreviewSection />
         <WhereToBuySection />
         <FAQSection />
         <CTASection />

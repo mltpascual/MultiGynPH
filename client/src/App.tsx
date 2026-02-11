@@ -9,6 +9,8 @@ import ActiGelPage from "./pages/ActiGelPage";
 import FemiWashPage from "./pages/FemiWashPage";
 import LiquiGelPage from "./pages/LiquiGelPage";
 import FloraPlusPage from "./pages/FloraPlusPage";
+import BlogPage from "./pages/BlogPage";
+import BlogArticlePage from "./pages/BlogArticlePage";
 
 
 function Router() {
@@ -19,6 +21,8 @@ function Router() {
       <Route path={"/products/femiwash"} component={FemiWashPage} />
       <Route path={"/products/liquigel"} component={LiquiGelPage} />
       <Route path={"/products/floraplus"} component={FloraPlusPage} />
+      <Route path={"/blog"} component={BlogPage} />
+      <Route path={"/blog/:slug"} component={BlogArticlePage} />
       <Route path={"/404"} component={NotFound} />
       {/* Final fallback route */}
       <Route component={NotFound} />

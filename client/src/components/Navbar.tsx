@@ -10,9 +10,9 @@ import { motion, AnimatePresence } from "framer-motion";
 const navLinks = [
   { label: "About", href: "#about" },
   { label: "Products", href: "#products" },
-  { label: "Benefits", href: "#benefits" },
+  { label: "Compare", href: "#compare" },
   { label: "Where to Buy", href: "#where-to-buy" },
-  { label: "FAQ", href: "#faq" },
+  { label: "Blog", href: "/blog", external: true },
 ];
 
 export default function Navbar() {

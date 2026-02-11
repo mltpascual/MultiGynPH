@@ -98,7 +98,9 @@ export default function Footer() {
               {[
                 { label: "About Multi-Gyn", href: "#about" },
                 { label: "How It Works", href: "#why" },
+                { label: "Compare Products", href: "#compare" },
                 { label: "Where to Buy", href: "#where-to-buy" },
+                { label: "Blog", href: "/blog" },
                 { label: "FAQ", href: "#faq" },
                 { label: "Official Website", href: "https://multi-gyn.com" },
               ].map((item) => (
