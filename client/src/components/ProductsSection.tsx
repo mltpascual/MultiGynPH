@@ -6,6 +6,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import { Link } from "wouter";
 
 const products = [
   {
@@ -16,6 +17,8 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg",
     color: "from-violet-deep/5 to-lavender/20",
     accent: "#4A1A6B",
+    href: "/products/actigel",
+    internal: true,
   },
   {
     name: "Multi-Gyn FemiWash",
@@ -25,6 +28,8 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png",
     color: "from-teal/5 to-teal/15",
     accent: "#2ABFBF",
+    href: "https://shopee.ph/list/multi%20gyn%20femiwash",
+    internal: false,
   },
   {
     name: "Multi-Gyn LiquiGel",
@@ -34,6 +39,8 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg",
     color: "from-blush/20 to-lavender/15",
     accent: "#C4A7D7",
+    href: "https://shopee.ph/list/multi%20gyn%20liquigel",
+    internal: false,
   },
   {
     name: "Multi-Gyn FloraPlus",
@@ -43,12 +50,26 @@ const products = [
     image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png",
     color: "from-violet-deep/5 to-teal/10",
     accent: "#4A1A6B",
+    href: "https://shopee.ph/list/multi%20gyn%20floraplus",
+    internal: false,
   },
 ];
 
 function ProductCard({ product, index }: { product: typeof products[0]; index: number }) {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-60px" });
+
+  const linkContent = (
+    <>
+      Learn More
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover/link:translate-x-1">
+        <path d="M5 12h14" />
+        <path d="m12 5 7 7-7 7" />
+      </svg>
+    </>
+  );
+
+  const linkClass = "inline-flex items-center gap-2 font-['Figtree'] text-sm font-semibold text-violet-deep hover:text-teal transition-colors duration-300 group/link";
 
   return (
     <motion.div
@@ -93,18 +114,15 @@ function ProductCard({ product, index }: { product: typeof products[0]; index: n
         </ul>
 
         {/* CTA */}
-        <a
-          href="https://shopee.ph/list/multi%20gyn"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center gap-2 font-['Figtree'] text-sm font-semibold text-violet-deep hover:text-teal transition-colors duration-300 group/link"
-        >
-          Learn More
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transition-transform duration-300 group-hover/link:translate-x-1">
-            <path d="M5 12h14" />
-            <path d="m12 5 7 7-7 7" />
-          </svg>
-        </a>
+        {product.internal ? (
+          <Link href={product.href} className={linkClass}>
+            {linkContent}
+          </Link>
+        ) : (
+          <a href={product.href} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            {linkContent}
+          </a>
+        )}
       </div>
     </motion.div>
   );
