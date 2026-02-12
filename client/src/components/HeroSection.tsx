@@ -21,7 +21,7 @@ export default function HeroSection() {
           className="w-full h-full object-cover"
           loading="eager"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#4A1A6B]/70 via-[#4A1A6B]/40 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#1B3A4B]/80 via-[#2D4A5E]/50 to-transparent" />
       </div>
 
       {/* Content */}
@@ -87,7 +87,7 @@ export default function HeroSection() {
           >
             <div className="relative">
               {/* Decorative blob behind image */}
-              <div className="absolute -inset-8 bg-gradient-to-br from-teal/20 to-lavender/30 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] blur-2xl" />
+              <div className="absolute -inset-8 bg-gradient-to-br from-teal/25 to-[#1B3A4B]/15 rounded-[40%_60%_70%_30%/40%_50%_60%_50%] blur-2xl" />
               <img
                 src={LIFESTYLE_IMG}
                 alt="Confident woman with healthy, radiant skin"
@@ -104,7 +104,7 @@ export default function HeroSection() {
                     </svg>
                   </div>
                   <div>
-                    <p className="font-['Figtree'] text-sm font-semibold text-violet-deep">Clinically Proven</p>
+                    <p className="font-['Figtree'] text-sm font-semibold text-[#1B3A4B]">Clinically Proven</p>
                     <p className="font-['Noto_Sans'] text-xs text-muted-foreground">Dermatologist Tested</p>
                   </div>
                 </div>
