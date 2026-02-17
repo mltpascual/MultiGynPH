@@ -6,7 +6,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 
-const TRUST_IMG = "https://private-us-east-1.manuscdn.com/sessionFile/eeJVGgPUfdsBYsx4CScK6Z/sandbox/m1fYroB1JtDzsK9hqndqO9-img-5_1770802562000_na1fn_dHJ1c3QtYmFkZ2U.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZWVKVkdnUFVmZHNCWXN4NENTY0s2Wi9zYW5kYm94L20xZllyb0IxSnREenNLOWhxbmRxTzktaW1nLTVfMTc3MDgwMjU2MjAwMF9uYTFmbl9kSEoxYzNRdFltRmtaMlUuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=CQO-NGop89Fn-9eZw8VnQkpKpciuVZ8dJfhJNRv2OYm7VON93wPPaUg5nOmGg4bhPQhoKx~-QoXOzWmP5~lFfbv-2Pt9VpvpFFTQYbTAa4V~BXq-1Hfu35refcSdXJ8iLrkb0ssicqTgd~SHf3MdIEnBElttGmdaWbtY38nVZCUu-kj7PmMGoumpNEnQVeD8mlX8ZbUSOi3WjOVmRHJYgpuvEF0wIHGjx4NRsthMjONnJNplYnmFGAEld05ia~ZWFNuzuUD-zOcUIZ83b0XMm6KGcO1QLufXQyaobqqIakKIt5Y4v9ID1JXa-nLTW19UhiD-zJ4PjB3AKpIKA9y-kA__";
+const TRUST_IMG = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/trust-badge.jpg";
 
 const stats = [
   { value: "20+", label: "Years of Research" },

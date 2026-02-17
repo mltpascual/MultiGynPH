@@ -24,10 +24,12 @@ import {
   Sparkles,
 } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOStructuredData from "@/components/SEOStructuredData";
+import SEOHead from "@/components/SEOHead";
 
 /* ─── DATA ─── */
-const PRODUCT_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg";
-const HERO_BG = "https://private-us-east-1.manuscdn.com/sessionFile/eeJVGgPUfdsBYsx4CScK6Z/sandbox/BV1nTp9ab4MJCp7bEjBJci-img-1_1770805700000_na1fn_YWN0aWdlbC1oZXJvLWJn.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZWVKVkdnUFVmZHNCWXN4NENTY0s2Wi9zYW5kYm94L0JWMW5UcDlhYjRNSkNwN2JFakJKY2ktaW1nLTFfMTc3MDgwNTcwMDAwMF9uYTFmbl9ZV04wYVdkbGJDMW9aWEp2TFdKbi5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=WegdhgLdfR6P5xx2cCOGv6BO8am5Bxk9vl2M1TYTQ6B4~OcopXlrjzIlK-MuNsKcDHkmWp2oR2-D7L~eBtmNtIjsFbgi-QOxadLH7H7L5RuYoL0zMFsRgvMWWzUWY44hf55OmmQ5uZstirI3oYJ0RkDx65Rwdh-CyWAol3qW8~twr6NpN8BglBZVdwD8VFTL~8Z6~wpTtM9lDubhlTUcKkTD5Kit5AktTneXsDo7-yQOgun2Qc82m8MhfqNwgcDRbZWzECmv~JyrPcW9bIYsqrnkFUsqqw2ZMcdyzTu7TM2t~hZOq1c70ca6-Hbc4igwfyNVVtYfmzDfSg9o67OU0Q__";
+const PRODUCT_IMAGE = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-actigel.jpg";
+const HERO_BG = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/actigel-hero-bg.jpg";
 
 const keyBenefits = [
   { icon: Droplets, title: "Reduces Odor & Discharge", description: "Directly targets the symptoms of bacterial vaginosis for fast, noticeable relief." },
@@ -159,19 +161,19 @@ const relatedProducts = [
   {
     name: "Multi-Gyn FemiWash",
     tagline: "Daily Intimate Hygiene",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-femiwash.png",
     href: "/",
   },
   {
     name: "Multi-Gyn LiquiGel",
     tagline: "Vaginal Dryness Relief",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-liquigel.jpg",
     href: "/",
   },
   {
     name: "Multi-Gyn FloraPlus",
     tagline: "Vaginal Yeast Relief",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-floraplus.png",
     href: "/",
   },
 ];
@@ -231,6 +233,13 @@ export default function ActiGelPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Multi-Gyn ActiGel — BV Treatment | Multi-Gyn PH"
+        description="Treats and prevents bacterial vaginosis (BV) with the patented 2QR Complex. Fast-acting, natural-based relief for odor, discharge, and intimate discomfort."
+        path="/products/actigel"
+        type="product"
+      />
+      <SEOStructuredData page="actigel" />
       {/* ─── STICKY NAV BAR ─── */}
       <ProductNav />
 

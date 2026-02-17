@@ -23,10 +23,12 @@ import {
   Clock,
 } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOStructuredData from "@/components/SEOStructuredData";
+import SEOHead from "@/components/SEOHead";
 
 /* ─── DATA ─── */
-const PRODUCT_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg";
-const HERO_BG = "https://private-us-east-1.manuscdn.com/sessionFile/eeJVGgPUfdsBYsx4CScK6Z/sandbox/zEiosYtqLQJS3ugqFT4M9m-img-2_1770834256000_na1fn_bGlxdWlnZWwtaGVyby1iZw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZWVKVkdnUFVmZHNCWXN4NENTY0s2Wi9zYW5kYm94L3pFaW9zWXRxTFFKUzN1Z3FGVDRNOW0taW1nLTJfMTc3MDgzNDI1NjAwMF9uYTFmbl9iR2x4ZFdsblpXd3RhR1Z5YnkxaVp3LmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=XwUxWWAMK62gB2t7W0B-PnBFJHjHmrq5XsARbHTPWr7lfEZ5QcMJKlroS7poLBbLI57k2fpRYTw3NvJDxL~aIodwObsSFBYfc1rPSU6sbpREk7npZUFXEekYxWgvx2NNDyJrz5pdlPXfj6USxE07iq4SoRkAIpHTdofXqK6KDq1S3Z7cdczDwNhy7-INeZy7RhO~7xLa9-drHlT4V8Y3zXzDSO45ETQSJZv8RNVfeowf1tSPmKgF8k7L3dv189SAzdpi9xfNKVCbEn5b~~~eOQ4APt2K83wIqlJRYsxPISmsF7~d1WegfXspkoqmSuw10owNeLAqzz5hmhODeq5UfQ__";
+const PRODUCT_IMAGE = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-liquigel.jpg";
+const HERO_BG = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/liquigel-hero-bg.jpg";
 
 const keyBenefits = [
   { icon: Droplets, title: "Long-Lasting Moisture", description: "Bio-adhesive gel formula provides sustained hydration that lasts, reducing the need for frequent reapplication." },
@@ -131,9 +133,9 @@ const safetyBadges = [
 ];
 
 const relatedProducts = [
-  { name: "Multi-Gyn ActiGel", tagline: "BV Treatment", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg", href: "/products/actigel" },
-  { name: "Multi-Gyn FemiWash", tagline: "Daily Intimate Hygiene", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png", href: "/products/femiwash" },
-  { name: "Multi-Gyn FloraPlus", tagline: "Vaginal Yeast Relief", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png", href: "/products/floraplus" },
+  { name: "Multi-Gyn ActiGel", tagline: "BV Treatment", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-actigel.jpg", href: "/products/actigel" },
+  { name: "Multi-Gyn FemiWash", tagline: "Daily Intimate Hygiene", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-femiwash.png", href: "/products/femiwash" },
+  { name: "Multi-Gyn FloraPlus", tagline: "Vaginal Yeast Relief", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-floraplus.png", href: "/products/floraplus" },
 ];
 
 /* ─── FAQ ITEM ─── */
@@ -186,6 +188,13 @@ export default function LiquiGelPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Multi-Gyn LiquiGel — Vaginal Dryness Relief | Multi-Gyn PH"
+        description="Gentle moisturizing gel for vaginal dryness relief. Long-lasting hydration and comfort with the natural 2QR Complex. Available at pharmacies in the Philippines."
+        path="/products/liquigel"
+        type="product"
+      />
+      <SEOStructuredData page="liquigel" />
       <ProductNav />
 
       {/* ─── HERO ─── */}

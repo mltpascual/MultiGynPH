@@ -12,10 +12,18 @@ import WhereToBuySection from "@/components/WhereToBuySection";
 import FAQSection from "@/components/FAQSection";
 import CTASection from "@/components/CTASection";
 import Footer from "@/components/Footer";
+import SEOStructuredData from "@/components/SEOStructuredData";
+import SEOHead from "@/components/SEOHead";
 
 export default function Home() {
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden">
+      <SEOHead
+        title="Multi-Gyn PH — Feminine Care You Can Trust"
+        description="Clinically-proven, natural-based feminine care products that prevent and treat common vaginal discomforts. Trusted by women across the Philippines. Available at Mercury Drug, Watsons, and Rose Pharmacy."
+        path="/"
+      />
+      <SEOStructuredData page="home" />
       <Navbar />
       <main>
         <HeroSection />

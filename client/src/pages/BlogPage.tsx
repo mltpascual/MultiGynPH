@@ -9,6 +9,7 @@ import { useRef, useEffect, useState } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, Clock, Tag, ArrowRight, Search, BookOpen } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 /* ─── ARTICLE DATA ─── */
 const categories = ["All", "Intimate Health", "Product Guides", "Wellness Tips", "Expert Advice"];
@@ -254,6 +255,11 @@ export default function BlogPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Intimate Health Blog — Multi-Gyn PH"
+        description="Expert articles on feminine intimate health, vaginal care tips, product guides, and wellness advice. Stay informed with Multi-Gyn PH."
+        path="/blog"
+      />
       <BlogNav />
 
       {/* ─── HERO ─── */}

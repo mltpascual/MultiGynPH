@@ -23,10 +23,12 @@ import {
   Clock,
 } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOStructuredData from "@/components/SEOStructuredData";
+import SEOHead from "@/components/SEOHead";
 
 /* ─── DATA ─── */
-const PRODUCT_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png";
-const HERO_BG = "https://private-us-east-1.manuscdn.com/sessionFile/eeJVGgPUfdsBYsx4CScK6Z/sandbox/zEiosYtqLQJS3ugqFT4M9m-img-1_1770834253000_na1fn_ZmVtaXdhc2gtaGVyby1iZw.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZWVKVkdnUFVmZHNCWXN4NENTY0s2Wi9zYW5kYm94L3pFaW9zWXRxTFFKUzN1Z3FGVDRNOW0taW1nLTFfMTc3MDgzNDI1MzAwMF9uYTFmbl9abVZ0YVhkaGMyZ3RhR1Z5YnkxaVp3LmpwZz94LW9zcy1wcm9jZXNzPWltYWdlL3Jlc2l6ZSx3XzE5MjAsaF8xOTIwL2Zvcm1hdCx3ZWJwL3F1YWxpdHkscV84MCIsIkNvbmRpdGlvbiI6eyJEYXRlTGVzc1RoYW4iOnsiQVdTOkVwb2NoVGltZSI6MTc5ODc2MTYwMH19fV19&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=LKYTEgrK~P0T2MT7UYpcQqO~hWG1gWVQveAstdKpOKWtidFxapPa9PdrlwgL5NQFXOQM8nxGjH0fW7nGTtIf9ajuDetJpoboM0rCKLglCSMgn5XQpbvpwkBz4bU6gB5PbEoJvoOdbCeYQX2pJs04TQVmx92ejDJ-UoRVKZ0QN5KPi3qGeu0CwVy6qBeAH40jeb3n7lD9J0QAcqADdlW~RZp1XIQorhM0sTpmXtOri~f6LjtQj7rgkTR1GFlQN08I~VUTcDKn~sEeHEfB1Nk4JeNtLWxJ~QJNcmI1Ped70rtTO6eHSB1qc1FaVAWI7oeB8m2u~afQ3maNcU01ivfDPg__";
+const PRODUCT_IMAGE = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-femiwash.png";
+const HERO_BG = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/femiwash-hero-bg.jpg";
 
 const keyBenefits = [
   { icon: Droplets, title: "Gentle & Non-Irritating", description: "Soap-free, mild formula that cleanses without causing irritation, suitable for even the most sensitive skin." },
@@ -137,9 +139,9 @@ const safetyBadges = [
 ];
 
 const relatedProducts = [
-  { name: "Multi-Gyn ActiGel", tagline: "BV Treatment", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg", href: "/products/actigel" },
-  { name: "Multi-Gyn LiquiGel", tagline: "Vaginal Dryness Relief", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg", href: "/products/liquigel" },
-  { name: "Multi-Gyn FloraPlus", tagline: "Vaginal Yeast Relief", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png", href: "/products/floraplus" },
+  { name: "Multi-Gyn ActiGel", tagline: "BV Treatment", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-actigel.jpg", href: "/products/actigel" },
+  { name: "Multi-Gyn LiquiGel", tagline: "Vaginal Dryness Relief", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-liquigel.jpg", href: "/products/liquigel" },
+  { name: "Multi-Gyn FloraPlus", tagline: "Vaginal Yeast Relief", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-floraplus.png", href: "/products/floraplus" },
 ];
 
 /* ─── FAQ ITEM ─── */
@@ -193,6 +195,13 @@ export default function FemiWashPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Multi-Gyn FemiWash — Daily Intimate Hygiene | Multi-Gyn PH"
+        description="Mild, soap-free intimate hygiene wash with the 2QR Complex. pH-balanced, gentle for daily use, and safe for sensitive skin. Available in the Philippines."
+        path="/products/femiwash"
+        type="product"
+      />
+      <SEOStructuredData page="femiwash" />
       <ProductNav />
 
       {/* ─── HERO ─── */}

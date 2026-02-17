@@ -18,7 +18,7 @@ const products = [
     color: "#4A1A6B",
     lightColor: "bg-violet-deep/5",
     href: "/products/actigel",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-actigel.jpg",
   },
   {
     name: "FemiWash",
@@ -27,7 +27,7 @@ const products = [
     color: "#2ABFBF",
     lightColor: "bg-teal/5",
     href: "/products/femiwash",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-femiwash.png",
   },
   {
     name: "LiquiGel",
@@ -36,7 +36,7 @@ const products = [
     color: "#c47a8e",
     lightColor: "bg-[#c47a8e]/5",
     href: "/products/liquigel",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-liquigel.jpg",
   },
   {
     name: "FloraPlus",
@@ -45,7 +45,7 @@ const products = [
     color: "#5a7a5a",
     lightColor: "bg-[#5a7a5a]/5",
     href: "/products/floraplus",
-    image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png",
+    image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-floraplus.png",
   },
 ];
 

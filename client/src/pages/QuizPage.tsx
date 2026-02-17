@@ -10,6 +10,7 @@ import { useState, useMemo } from "react";
 import { Link } from "wouter";
 import { ArrowLeft, ArrowRight, RotateCcw, Sparkles, CheckCircle, ShieldCheck } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOHead from "@/components/SEOHead";
 
 /* ─── QUIZ DATA ─── */
 interface QuizOption {
@@ -204,6 +205,11 @@ export default function QuizPage() {
 
   return (
     <div className="min-h-screen flex flex-col overflow-x-hidden bg-background">
+      <SEOHead
+        title="Product Quiz — Find Your Multi-Gyn Solution | Multi-Gyn PH"
+        description="Answer 5 quick questions to discover which Multi-Gyn feminine care product is right for your specific intimate health concern."
+        path="/quiz"
+      />
       {/* ─── NAVBAR ─── */}
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-lavender-light/30">
         <div className="container flex items-center justify-between h-16">

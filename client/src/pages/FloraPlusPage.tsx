@@ -23,10 +23,12 @@ import {
   Clock,
 } from "lucide-react";
 import Footer from "@/components/Footer";
+import SEOStructuredData from "@/components/SEOStructuredData";
+import SEOHead from "@/components/SEOHead";
 
 /* ─── DATA ─── */
-const PRODUCT_IMAGE = "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/FiMBdTdZrWOParXB.png";
-const HERO_BG = "https://private-us-east-1.manuscdn.com/sessionFile/eeJVGgPUfdsBYsx4CScK6Z/sandbox/zEiosYtqLQJS3ugqFT4M9m-img-3_1770834260000_na1fn_ZmxvcmFwbHVzLWhlcm8tYmc.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZWVKVkdnUFVmZHNCWXN4NENTY0s2Wi9zYW5kYm94L3pFaW9zWXRxTFFKUzN1Z3FGVDRNOW0taW1nLTNfMTc3MDgzNDI2MDAwMF9uYTFmbl9abXh2Y21Gd2JIVnpMV2hsY204dFltYy5qcGc~eC1vc3MtcHJvY2Vzcz1pbWFnZS9yZXNpemUsd18xOTIwLGhfMTkyMC9mb3JtYXQsd2VicC9xdWFsaXR5LHFfODAiLCJDb25kaXRpb24iOnsiRGF0ZUxlc3NUaGFuIjp7IkFXUzpFcG9jaFRpbWUiOjE3OTg3NjE2MDB9fX1dfQ__&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=EEvIcZslTfLq4n9nViYkN7lcHdbr8KD3ckNT0RUE-VfyQ8Zah3SEut7XwHXSMxqeHmACR5xmREf6iwEhblLk4GkCNf-J2qKqUUwhf3G5zJuOSx5n2nEWNgG8CgYo3EH5jCxqoiptc38PgksBXEjQORIaODNQdzrxE8TrVwOhyXOMce0E5YHJJJGpxaAJM9WF99Jv49RJNzGzPS2RWBd3BiSDYxfThl2CgnE8a3JE6Q~Xn5NUtRflSKc56gMeZC0AITzyKuVPP8u-tB6jQghCNF~SO~Hk-BIYmf1~2ocPZSpOCOPpO8c-Ciq8nAuvgUOQpvxR3jJtCHGPTjbIlw1Srw__";
+const PRODUCT_IMAGE = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-floraplus.png";
+const HERO_BG = "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/floraplus-hero-bg.jpg";
 
 const keyBenefits = [
   { icon: Sparkles, title: "Relieves Yeast Symptoms", description: "Provides direct relief from itch, irritation, redness, and crumbly white discharge caused by vaginal yeast." },
@@ -132,9 +134,9 @@ const safetyBadges = [
 ];
 
 const relatedProducts = [
-  { name: "Multi-Gyn ActiGel", tagline: "BV Treatment", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/UJOCnRlwdjWmTmdS.jpg", href: "/products/actigel" },
-  { name: "Multi-Gyn FemiWash", tagline: "Daily Intimate Hygiene", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/EpAjnYmkhRsdcjLR.png", href: "/products/femiwash" },
-  { name: "Multi-Gyn LiquiGel", tagline: "Vaginal Dryness Relief", image: "https://files.manuscdn.com/user_upload_by_module/session_file/310519663343684150/xXGDXMrDtGeDQnNx.jpg", href: "/products/liquigel" },
+  { name: "Multi-Gyn ActiGel", tagline: "BV Treatment", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-actigel.jpg", href: "/products/actigel" },
+  { name: "Multi-Gyn FemiWash", tagline: "Daily Intimate Hygiene", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-femiwash.png", href: "/products/femiwash" },
+  { name: "Multi-Gyn LiquiGel", tagline: "Vaginal Dryness Relief", image: "https://raw.githubusercontent.com/mltpascual/MultiGynPH/main/client/public/images/product-liquigel.jpg", href: "/products/liquigel" },
 ];
 
 /* ─── FAQ ITEM ─── */
@@ -187,6 +189,13 @@ export default function FloraPlusPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
+      <SEOHead
+        title="Multi-Gyn FloraPlus — Vaginal Yeast Relief | Multi-Gyn PH"
+        description="Natural relief from vaginal yeast symptoms including itch, irritation, and discharge. Restores healthy vaginal flora with the 2QR Complex. Available in the Philippines."
+        path="/products/floraplus"
+        type="product"
+      />
+      <SEOStructuredData page="floraplus" />
       <ProductNav />
 
       {/* ─── HERO ─── */}
